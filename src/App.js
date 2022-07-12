@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Users from './components/Users';
 
-function App() {
+class App extends Component {
+
+
+  state  = {
+    users: [
+      {
+        id: 1, 
+        name: "Atlas",
+        department: "IT",
+        salary: "5000"
+      },
+      {
+        id: 2,
+        name: "Melisa",
+        department: "HR",
+        salary: "6000"
+      },
+      {
+        id: 3,
+        name: "Sare",
+        department: "CEO office",
+        salary: "15000"
+      }
+    ]
+  }
+  
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar title= "Users"></Navbar> 
+      <hr/>
+      <Users users = {this.state.users}/>
     </div>
   );
+}
 }
 
 export default App;
