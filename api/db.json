@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "Melisa",
+      "department": "HR",
+      "salary": "6000"
+    },
+    {
+      "id": "3",
+      "name": "Sare",
+      "department": "CEO office",
+      "salary": "15000"
+    },
+    {
+      "id": "l5lll2gs",
+      "name": "Özgür",
+      "department": "IT",
+      "salary": "235234"
+    },
+    {
+      "id": "l5llmk63",
+      "name": "Atlas",
+      "department": "IT",
+      "salary": "1500"
+    }
+  ]
+}

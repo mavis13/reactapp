@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import posed from 'react-pose';
 import UserConsumer from '../context';
+import axios from 'axios';
 
+const baseURL = "http://localhost:3001/users";
 const Animation = posed.div({
     visible : { opacity : 1, applyAtStart : { display : "block"}},
     hidden  : { opacity : 0, applyAtEnd : { display : "none"}}
@@ -33,14 +35,15 @@ changeInput = (e) => {
 addUser = (dispatch, e) => {
     e.preventDefault();
     const {name, department, salary} = this.state;
-
+    const id = uniqid();
+    
     const newUser = {
-        id : uniqid(),
+        id : id,
         name : name,
         department : department,
         salary : salary
     }
-
+    axios.post(baseURL, newUser);
     dispatch({type : "ADD_USER", payload : newUser});
 }
 

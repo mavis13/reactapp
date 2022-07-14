@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import UserConsumer from '../context'
+import axios from 'axios';
+
+const baseURL = "http://localhost:3001/users";
 
 
 class User extends Component {
@@ -23,10 +26,16 @@ class User extends Component {
 
     onDeleteUser = (dispatch, e) => {
         const {id} = this.props;
+        axios.delete(baseURL+'/'+id)
         dispatch({type : "DELETE_USER", 
                  payload : id});
     }
 
+    componentWillUnmount = () => {
+        // kaynaklari serbest birakmak icin kullanilabilir.
+    //   console.log("component will unmount: "+this.props.name);
+    }
+    
 
   render() {
     //Destructing
